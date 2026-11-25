@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dashboard__controls {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: clamp(12px, 2vw, 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard__search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.dashboard__search-box {
+  flex: 1 1 240px;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.dashboard__search-input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 14px 10px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: clamp(0.84rem, 1.4vw, 0.94rem);
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  outline: none;
+}
+
+.dashboard__search-input:focus {
+  border-color: var(--secondary-blue);
+}
+
+.dashboard__filters-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 12px;
+}
+
+.dashboard__select {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: clamp(0.82rem, 1.35vw, 0.92rem);
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  outline: none;
+}
+
+.dashboard__select:focus {
+  border-color: var(--secondary-blue);
+}
+
+.dashboard__hint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: clamp(0.78rem, 1.3vw, 0.86rem);
+  color: var(--text-gray);
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.dashboard__empty {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-gray);
+}
+
+@media (max-width: 767px) {
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.debtors {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.debtors__create-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: clamp(14px, 2vw, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.debtors__create-title {
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-weight: 800;
+  color: var(--primary-blue);
+}
+
+.debtors__form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  align-items: center;
+}
+
+.debtors__input,
+.debtors__select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: clamp(0.84rem, 1.4vw, 0.94rem);
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  outline: none;
+}
+
+.debtors__input:focus,
+.debtors__select:focus {
+  border-color: var(--secondary-blue);
+}
+
+.debtors__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: clamp(12px, 2vw, 16px);
+}
+
+.debtors__search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.debtors__search-box {
+  flex: 1 1 220px;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.debtors__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.debtors__search-input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 14px 10px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: clamp(0.84rem, 1.4vw, 0.94rem);
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  outline: none;
+}
+
+.debtors__search-input:focus {
+  border-color: var(--secondary-blue);
+}
+
+.debtors__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.debtors__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+  text-align: left;
+}
+
+.debtors__table thead {
+  background-color: var(--primary-blue);
+  color: var(--bg-white);
+}
+
+.debtors__table th {
+  padding: 12px 14px;
+  font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.debtors__table td {
+  padding: 12px 14px;
+  font-size: clamp(0.82rem, 1.35vw, 0.92rem);
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.debtors__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.debtors__table tbody tr:hover {
+  background-color: #f4f7fb;
+}
+
+.debtors__name-link {
+  font-weight: 700;
+  color: var(--secondary-blue);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.debtors__name-link:hover {
+  color: var(--primary-blue);
+}
+
+.debtors__amount {
+  font-weight: 800;
+  color: #b91c1c;
+  white-space: nowrap;
+}
+
+.debtors__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  white-space: nowrap;
+}
+
+.debtors__badge--settled {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.debtors__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.debtors__edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-white);
+  color: var(--primary-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.debtors__edit-btn:hover {
+  background-color: #eff6ff;
+  border-color: var(--secondary-blue);
+}
+
+.debtors__delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: none;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.debtors__delete-btn:hover {
+  background-color: #dc2626;
+  color: var(--bg-white);
+}
+
+.debtors__empty {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--text-gray);
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+}
+
+@media (max-width: 767px) {
+  .debtors__form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

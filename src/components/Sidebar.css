@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.sidebar {
+  width: 245px;
+  min-width: 220px;
+  max-width: 100%;
+  background-color: var(--bg-white);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.sidebar-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  background-color: var(--primary-blue);
+  color: var(--bg-white);
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.close-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--bg-white);
+  cursor: pointer;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 6px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  background-color: var(--bg-light);
+  color: var(--secondary-blue);
+}
+
+.sidebar-link.active {
+  background-color: var(--primary-blue);
+  color: var(--bg-white);
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sidebar-footer {
+  padding: 14px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-user-box {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.sidebar-user-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+}
+
+.sidebar-user-phone {
+  font-size: 0.78rem;
+  color: var(--text-gray);
+  margin-top: 2px;
+}
+
+.logout-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #fecaca;
+  background-color: #fef2f2;
+  color: #dc2626;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+  color: var(--bg-white);
+  border-color: #dc2626;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    transition: left 0.22s ease;
+    z-index: 55;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .close-btn {
+    display: inline-flex;
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 44, 89, 0.45);
+    z-index: 50;
+  }
+}
